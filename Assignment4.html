@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Ass4.js"></script>
+    <title>Variables & Loops</title>
+</head>
+<body>
+    Variables And Loops
+</body>
+<script>
+    // Assignment 1
+
+let productName = "Britannaia Bisket"
+let originalPrice = 20;
+let discount = 5;
+let isInstock = true;
+let deliveryMinutes = 10;
+let category = "Shop";
+
+// customer details
+// TODO: Customer details
+let buyerName = "Priya";
+let buyerAge = 25;
+let hasPremiumMembership = false;
+
+// TODO: Simple calculations (primitives working together)
+let finalPrice = originalPrice - discount;
+let deliveryHours = deliveryMinutes / 60;
+
+console.log("Product Name:", productName);
+console.log("Category:", category);
+console.log("Original Price:", originalPrice);
+console.log("Discount:", discount);
+console.log("InStock:", isInstock);
+console.log("DelveryMinutes:",deliveryMinutes)
+
+console.log("Customer Name:", buyerName);
+console.log("Age:", buyerAge + " years");
+console.log("Membership:", hasPremiumMembership ? "Premium 👑" : "Regular 👤");
+
+// TODO: Test your understanding
+console.log("\n=== CALCULATIONS TEST ===");
+console.log("Is product affordable under ₹50?", finalPrice < 50);
+console.log("Can deliver in under 30 minutes?", deliveryMinutes < 30);
+console.log("Is customer adult?", buyerAge >= 18);
+
+
+// Without Objects (scattered):
+let customerName = "Priya";
+let customerPhone = "9876543210";
+let customerAddress = "Koramangala";
+let customerPremium = true;
+
+// With Objects (organized):
+
+
+//  Assignment 2  objects
+
+//  Create a customer object
+let customer = {
+    name: "Arjun",
+    age:32,
+    phone:"8673676889",
+    email:"arjun@gmail.com",
+    city:"bangalore",  
+};
+
+
+// create an order object using customer and product info 
+let product = {
+     name: "Maggi Noodles",
+    brand: "Nestle",
+    price: 42,
+    category: "Instant Food",
+    weight: "70g",
+    inStock: true,
+    deliveryTime: 12
+};
+
+// TODO: Create an order object using customer and product info
+let order = {
+    customerName: customer.name,    // Using customer object!
+    productName: product.name,      // Using product object!
+    quantity: 3,
+    pricePerItem: product.price,    // Using product object!
+    totalAmount: product.price * 3, // Calculation
+    deliveryAddress: customer.city,  // Using customer object!
+    orderDate: "Today",
+    status: "Confirmed"
+};
+ 
+
+console.log("Name", customer.name);
+console.log("Age", customer.age);
+console.log("Phone", customer.phone);
+console.log("Email", customer.email);
+console.log("City", customer.city);
+
+console.log("Name:", product.name);
+console.log("Brand:", product.brand);
+console.log("Price: ₹" + product.price);
+console.log("Category:", product.category);
+console.log("Weight:", product.weight);
+console.log("Stock:", product.inStock ? "Available " : "Out of Stock  ");
+console.log("Delivery:", product.deliveryTime + " minutes");
+
+console.log("\n=== ORDER SUMMARY ===");
+console.log("Customer:", order.customerName);
+console.log("Product:", order.productName);
+console.log("Quantity:", order.quantity);
+console.log("Price per item: ₹" + order.pricePerItem);
+console.log("Total Amount: ₹" + order.totalAmount);
+console.log("Delivery to:", order.deliveryAddress);
+console.log("Order Date:", order.orderDate);
+console.log("Status:", order.status);
+
+
+console.log("\n=== OBJECT BENEFITS TEST ===");
+console.log("Easy access to customer name:", customer.name);
+console.log("Easy calculation:", product.price * 2);
+console.log("Objects keep related data together! ");
+
+Arrays
+let ShoopingCart = ["Milk","Bread","Eggs"];
+
+console.log("All items:", ShoopingCart);
+console.log("First item:", ShoopingCart[0]);
+console.log("Total items:", ShoopingCart.length);
+
+let shoppingCart = [
+    "Amul Milk 1L",
+    "Britannia bread",
+    "Farm Fresh Eggs",
+    "Maggi Noddles",
+    "Lays Chips",
+];
+
+// TODO: Display all arrays
+console.log("=== SHOPPING CART ===");
+console.log("Total items:", shoppingCart.length);
+console.log("1.", shoppingCart[0]);
+console.log("2.", shoppingCart[1]);
+console.log("3.", shoppingCart[2]);
+console.log("4.", shoppingCart[3]);
+console.log("5.", shoppingCart[4]);
+console.log("First item:", shoppingCart[0]);
+console.log("Last item:", shoppingCart[shoppingCart.length - 1]);
+
+let deliverySlots = [
+    "6:00 AM - 8:00 AM",
+    "8:00 AM - 10:00 AM",
+    "10:00 AM - 12:00 AM",
+    "12:00 AM - 2:00 AM",
+
+];
+
+console.log("\n=== DELIVERY SLOTS ===");
+console.log("Available slots:", deliverySlots.length);
+console.log("Morning:", deliverySlots[0]);
+console.log("Mid-Morning:", deliverySlots[1]);
+console.log("Noon:", deliverySlots[2]);
+console.log("Afternoon:", deliverySlots[3]);
+
+
+let storeLocations = [
+    "HSR Layout",
+    "Koramangala",
+    "Indiranagar",
+    "Whitefield",
+    "Jayanagar"
+];
+
+console.log("\n=== STORE LOCATIONS ===");
+console.log("Total stores:", storeLocations.length);
+console.log("Nearest:", storeLocations[0]);
+console.log("All locations:", storeLocations[0] + ", " + storeLocations[1] + ", " + 
+    storeLocations[2] + ", " + storeLocations[3] + ", " + storeLocations[4]);
+
+
+let recentCustomers = [
+    "Rajesh Kumar",
+    "Priya Sharma",  
+    "Arjun Patel",
+    "Sneha Reddy"
+];
+
+let categories = [
+    "Dairy & Breakfast",
+    "Fruits & Vegetables",
+    "Snacks & Munchies",
+    "Cold Drinks & Juices",
+    "Instant & Frozen Food"
+];
+
+console.log("\n=== RECENT CUSTOMERS ===");
+console.log("Total customers:", recentCustomers.length);
+console.log("Latest:", recentCustomers[0]);
+console.log("Second:", recentCustomers[1]);
+console.log("Third:", recentCustomers[2]);
+console.log("Fourth:", recentCustomers[3]);
+
+// TODO: Test array benefits
+console.log("\n=== ARRAY BENEFITS TEST ===");
+console.log("Easy counting:", shoppingCart.length + " items in cart");
+// console.log("Easy access:", "First category is " + categories[0]);
+console.log("Arrays organize multiple items perfectly! ");
+
+let cart = ["Milk", "Bread", "Eggs",
+    "Noddles", "Chips"];
+let prices = [65,35,180,42,20];
+
+// let total = prices[0] + prices[1] + prices[2] + prices[3] + prices[4];
+
+console.log(total);
+
+// Part 6: Problem with mannual Array Processing
+
+// let cart = ["Milk", "Bread", "Eggs", "Noodles", "Chips"];
+// let prices = [65, 35, 180, 42, 20];
+
+// Manual display (nightmare for large arrays):
+console.log("Item 1: " + cart[0]);
+console.log("Item 2: " + cart[1]);
+console.log("Item 3: " + cart[2]);
+console.log("Item 4: " + cart[3]);
+console.log("Item 5: " + cart[4]);
+// What if 100 items? 100 lines!
+
+
+// let total = prices[0] + prices[1] + prices[2] + prices[3] + prices[4];
+// What if 50 prices? Impossible!
+
+// Part-7 Loops -Automatic Repetition
+
+
+for(let i=0;i< cart.length;i++){
+    console.log("Item" + (i+1) + " : " + cart[i]);
+}
+
+
+let prices = [65,35,180,42,20];
+let total =0;
+for(let i=0;i< prices.length;i++){
+    total = total + prices[i];
+}
+console.log("Total: "+ total);
+
+Assigment-4 :simple loops 
+
+let cartItems = ["Amul Milk", "Britannia Bread", "Farm Eggs", "Maggi Noodles", "Lays Chips"];
+let itemPrices = [65,35,180,42,20];
+
+let customers = ["Rajesh", "Priya", "Arjun", "Sneha", "Vikram"];
+let categories = ["Dairy", "Bakery", "Instant Food", "Snacks", "Beverages"];
+
+for(let i=0;i<cartItems.length;i++) {
+    console.log((i+1)+ "."+ cartItems[i]);
+}
+console.log("Total Items:", cartItems.length);
+
+let totalPrice = 0;
+for(let i=0;i<itemPrices.length;i++) {
+    totalPrice = totalPrice+ itemPrices[i];
+    console.log(cartItems[i] + ": $" + itemPrices[i]);
+}
+console.log("Total Amount: $" + totalPrice);
+
+let searchItem = "Eggs"
+console.log("Searching for '" + searchItem + "' in cart:");
+
+let found = false;
+for(let i=0; i<cartItems.length;i++) {
+    if(cartItems[i].includes(searchItem)) {
+        console.log("Found " + cartItems[i]+ "at position" +i);
+        found= true;
+    }
+if(!found) {
+    console.log(+ searchItem + "not found in cart");
+}
+}
+
+
+
+// TODO: Assignment 4 - Display customer list with numbers
+console.log("\n=== CUSTOMER LIST ===");
+console.log("All customers automatically numbered:");
+for (let i = 0; i < customers.length; i++) {
+    console.log("Customer " + (i + 1) + ": " + customers[i]);
+}
+console.log("Total customers:", customers.length);
+
+// TODO: Assignment 5 - Find most expensive item
+console.log("\n=== MOST EXPENSIVE ITEM ===");
+let highestPrice = 0;
+let expensiveItem = "";
+for (let i = 0; i < itemPrices.length; i++) {
+    if (itemPrices[i] > highestPrice) {
+        highestPrice = itemPrices[i];
+        expensiveItem = cartItems[i];
+    }
+}
+console.log("Most expensive: " + expensiveItem + " (₹" + highestPrice + ")");
+
+// TODO: Assignment 6 - Count items under ₹50
+console.log("\n=== AFFORDABLE ITEMS ===");
+let affordableCount = 0;
+console.log("Items under ₹50:");
+for (let i = 0; i < itemPrices.length; i++) {
+    if (itemPrices[i] < 50) {
+        console.log("- " + cartItems[i] + " (₹" + itemPrices[i] + ")");
+        affordableCount++;
+    }
+}
+console.log("Total affordable items:", affordableCount);
+
+// TODO: Test loop benefits
+console.log("\n=== LOOP BENEFITS TEST ===");
+console.log("One loop processes", cartItems.length, "items");
+console.log("Same code works for 10 or 1000 items");
+console.log(" Automatic, fast, and efficient");
+console.log(" No repetitive code needed");
+
+
+
+// assignment5.js - Complete Blinkit System
+
+console.log("🛒 COMPLETE BLINKIT ORDER SYSTEM");
+console.log("Using Primitives + Objects + Arrays + Loops together!");
+console.log("=" .repeat(50));
+
+// Step 1 - Customer information (Object with primitives)
+let customer = {
+    name: "Kavya Reddy",
+    phone: "9876543210",
+    address: "Whitefield, Bangalore",
+    isPremium: true,
+    walletBalance: 850
+};
+
+//  Step 2 - Available products (Array of objects)
+let availableProducts = [
+    {name: "Amul Milk 1L", price: 65, category: "Dairy", inStock: true},
+    {name: "Britannia Bread", price: 35, category: "Bakery", inStock: true},
+    {name: "Farm Eggs 12pc", price: 180, category: "Dairy", inStock: false},
+    {name: "Maggi Noodles", price: 42, category: "Instant", inStock: true},
+    {name: "Coca Cola", price: 45, category: "Beverages", inStock: true}
+];
+
+//  Step 3 - Customer's cart (Array of product names)
+let customerCart = [
+    "Amul Milk 1L",
+    "Britannia Bread",
+    "Maggi Noodles",
+    "Coca Cola"
+];
+
+// Display customer information
+//  CUSTOMER INFORMATION
+console.log("-".repeat(30));
+console.log("Name:", customer.name);
+console.log("Phone:", customer.phone);
+console.log("Address:", customer.address);
+console.log("Membership:", customer.isPremium ? "Premium " : "Regular ");
+console.log("Wallet Balance: ₹" + customer.walletBalance);
+
+// TODO: Step 4 - Display available products using loop
+// AVAILABLE PRODUCTS
+console.log("-".repeat(30));
+for (let i = 0; i < availableProducts.length; i++) {
+    let product = availableProducts[i];
+    let stockStatus = product.inStock ? "Available " : "Out of Stock ";
+    console.log((i + 1) + ". " + product.name);
+    console.log("   Price: ₹" + product.price + " | Category: " + product.category);
+    console.log("   Status: " + stockStatus);
+}
+
+// TODO: Step 5 - Process customer cart using loops
+//  SHOPPING CART
+console.log("-".repeat(30));
+let cartTotal = 0;
+let availableItems = 0;
+
+for (let i = 0; i < customerCart.length; i++) {
+    let cartItemName = customerCart[i];
+    
+    // Find product details using another loop
+    for (let j = 0; j < availableProducts.length; j++) {
+        if (availableProducts[j].name === cartItemName) {
+            let product = availableProducts[j];
+            
+            if (product.inStock) {
+                cartTotal = cartTotal + product.price;
+                availableItems++;
+                console.log( + product.name + " - ₹" + product.price);
+            } else {
+                console.log( + product.name + " - Out of Stock");
+            }
+            break;
+        }
+    }
+}
+
+console.log("-".repeat(30));
+console.log("Available items: " + availableItems + " out of " + customerCart.length);
+console.log("Cart Total: ₹" + cartTotal);
+
+// TODO: Step 6 - Order processing with calculations
+let deliveryCharge = cartTotal > 200 ? 0 : 25;
+let discount = customer.isPremium ? Math.round(cartTotal * 0.1) : 0;
+let finalAmount = cartTotal + deliveryCharge - discount;
+
+// ORDER SUMMARY
+console.log("-".repeat(30));
+console.log("Subtotal: ₹" + cartTotal);
+console.log("Delivery Charge: ₹" + deliveryCharge + (cartTotal > 200 ? " (Free above ₹200)" : ""));
+console.log("Premium Discount: -₹" + discount + (customer.isPremium ? " (10% off)" : " (No discount)"));
+console.log("Final Amount: ₹" + finalAmount);
+
+// Check if customer can afford
+if (customer.walletBalance >= finalAmount) {
+    console.log(" Order can be placed! Sufficient wallet balance.");
+} else {
+    let shortfall = finalAmount - customer.walletBalance;
+    console.log(" Insufficient balance. Need ₹" + shortfall + " more.");
+}
+
+// TODO: Step 7 - Statistics using loops
+//  ORDER STATISTICS
+console.log("-".repeat(30));
+
+// Count products by category
+let dairyCount = 0;
+let bakeryCount = 0;
+let instantCount = 0;
+let beverageCount = 0;
+
+for (let i = 0; i < customerCart.length; i++) {
+    let cartItemName = customerCart[i];
+    
+    for (let j = 0; j < availableProducts.length; j++) {
+        if (availableProducts[j].name === cartItemName && availableProducts[j].inStock) {
+            let category = availableProducts[j].category;
+            
+            if (category === "Dairy") dairyCount++;
+            if (category === "Bakery") bakeryCount++;
+            if (category === "Instant") instantCount++;
+            if (category === "Beverages") beverageCount++;
+            break;
+        }
+    }
+}
+
+console.log("Items by Category:");
+if (dairyCount > 0) console.log("- Dairy: " + dairyCount + " items");
+if (bakeryCount > 0) console.log("- Bakery: " + bakeryCount + " items");
+if (instantCount > 0) console.log("- Instant: " + instantCount + " items");
+if (beverageCount > 0) console.log("- Beverages: " + beverageCount + " items");
+
+// Find most expensive item
+let maxPrice = 0;
+let expensiveItem = "";
+for (let i = 0; i < customerCart.length; i++) {
+    let cartItemName = customerCart[i];
+    
+    for (let j = 0; j < availableProducts.length; j++) {
+        if (availableProducts[j].name === cartItemName && 
+            availableProducts[j].inStock && 
+            availableProducts[j].price > maxPrice) {
+            maxPrice = availableProducts[j].price;
+            expensiveItem = availableProducts[j].name;
+        }
+    }
+}
+
+if (expensiveItem) {
+    console.log("Most expensive item: " + expensiveItem + " (₹" + maxPrice + ")");
+}
+
+//  ORDER PROCESSING COMPLETE!
+console.log("This system uses:");
+console.log(" Primitives (prices, names, counts)");
+console.log(" Objects (customer, product details)");
+console.log(" Arrays (product lists, shopping cart)");
+console.log(" Loops (processing, calculations, search)");
+
+
+</script>
+</html>
